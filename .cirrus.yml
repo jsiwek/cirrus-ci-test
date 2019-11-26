@@ -1,19 +1,20 @@
 
 test_task_template: &TEST_TASK_TEMPLATE
-    test_script: echo hi
+    test_script:
+        - ./run-ci-tasks.sh
 
-osx_ci_task:
+osx_task:
     osx_instance:
         # macOS 10.14.x (Mojave)
         image: mojave-base
     << : *TEST_TASK_TEMPLATE
 
-freebsd_ci_task:
+freebsd_task:
     freebsd_instance:
         image_family: freebsd-12-0
     << : *TEST_TASK_TEMPLATE
 
-linux_ci_task:
+linux_task:
     container:
         matrix:
             - image: ubuntu:18.04
