@@ -17,7 +17,7 @@ freebsd_task:
 linux_task:
   container:
     matrix:
-      - dockerfile: ./ci/ubuntu-16.04/Dockerfile
-      - dockerfile: ./ci/ubuntu-18.04/Dockerfile
+      - dockerfile: ci/ubuntu-16.04/Dockerfile
+      - dockerfile: ci/ubuntu-18.04/Dockerfile
   << : *CI_TEMPLATE
   list_pkg_script: apt list --installed | grep ninja
