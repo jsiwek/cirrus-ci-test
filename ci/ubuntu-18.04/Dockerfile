@@ -1,1 +1,1 @@
-FROM jsiwek/cirrus-ci-test-ubuntu:latest
+FROM ubuntu:18.04
