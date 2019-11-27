@@ -2,17 +2,17 @@
 ci_template: &CI_TEMPLATE
   test_script: ./ci/run.sh
 
-osx_task:
-  osx_instance:
-    image: mojave-base
-  prepare_script: ./ci/macos/prepare.sh
-  << : *CI_TEMPLATE
+# osx_task:
+#   osx_instance:
+#     image: mojave-base
+#   prepare_script: ./ci/macos/prepare.sh
+#   << : *CI_TEMPLATE
 
-freebsd_task:
-  freebsd_instance:
-    image_family: freebsd-12-0
-  prepare_script: ./ci/freebsd/prepare.sh
-  << : *CI_TEMPLATE
+# freebsd_task:
+#   freebsd_instance:
+#     image_family: freebsd-12-0
+#   prepare_script: ./ci/freebsd/prepare.sh
+#   << : *CI_TEMPLATE
 
 linux_task:
   container:
@@ -20,4 +20,4 @@ linux_task:
       - dockerfile: ci/ubuntu-16.04/Dockerfile
       - dockerfile: ci/ubuntu-18.04/Dockerfile
   << : *CI_TEMPLATE
-  list_pkg_script: apt list --installed | grep ninja
+  list_pkg_script: apt list --installed | grep -q ninja
