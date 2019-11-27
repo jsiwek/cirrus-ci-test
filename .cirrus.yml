@@ -1,22 +1,23 @@
 
-test_task_template: &TEST_TASK_TEMPLATE
-    test_script:
-        - ./run-ci-tasks.sh
+ci_template: &CI_TEMPLATE
+  test_script: ./ci/run.sh
 
-# osx_task:
-#     osx_instance:
-#         # macOS 10.14.x (Mojave)
-#         image: mojave-base
-#     << : *TEST_TASK_TEMPLATE
+osx_task:
+  osx_instance:
+    image: mojave-base
+  prepare_script: ./ci/macos/prepare.sh
+  << : *CI_TEMPLATE
 
-# freebsd_task:
-#     freebsd_instance:
-#         image_family: freebsd-12-0
-#     << : *TEST_TASK_TEMPLATE
+freebsd_task:
+  freebsd_instance:
+    image_family: freebsd-12-0
+  prepare_script: ./ci/freebsd/prepare.sh
+  << : *CI_TEMPLATE
 
 linux_task:
-    container:
-        matrix:
-            - image: ubuntu:18.04
-            - image: ubuntu:16.04
-    << : *TEST_TASK_TEMPLATE
+  container:
+    matrix:
+      - dockerfile: ./ci/ubuntu-16.04/Dockerfile
+      - dockerfile: ./ci/ubuntu-18.04/Dockerfile
+  << : *CI_TEMPLATE
+  list_pkg_script: apt list --installed | grep ninja
