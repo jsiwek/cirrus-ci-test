@@ -1,6 +1,7 @@
 
 ci_template: &CI_TEMPLATE
-  test_script: ./ci/run.sh
+  test1_script: ./ci/test1.sh
+  test2_script: ./ci/test2.sh
 
 # osx_task:
 #   osx_instance:
@@ -17,8 +18,7 @@ ci_template: &CI_TEMPLATE
 linux_task:
   container:
     matrix:
-      - dockerfile: ci/ubuntu-16.04/Dockerfile
+      #- dockerfile: ci/ubuntu-16.04/Dockerfile
       - dockerfile: ci/ubuntu-18.04/Dockerfile
   << : *CI_TEMPLATE
-  list_pkg_script: apt list --installed | grep ninja || true
 
