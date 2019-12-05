@@ -6,4 +6,4 @@ echo hello test1: ${CIRRUS_OS}
 ls
 pwd
 
-exit 0
+exit 1
