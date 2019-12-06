@@ -3,7 +3,8 @@
 set -x
 
 echo hello test1: ${CIRRUS_OS}
-ls
-pwd
+nproc
+free -h
+df -h
 
 exit 0
