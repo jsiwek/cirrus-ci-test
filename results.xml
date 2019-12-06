@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<testsuite errors="0" failures="0" hostname="Jons-MacBook-Pro-15" tests="4" time="1.3175878524780273" timestamp="2019-12-05T18:58:25.786536">
+    <testcase classname="core.leaks" name="ayiya" time="0.04520869255065918">
+        <skipped type="skipped">  % 'zeek  --help 2&gt;&amp;1 | grep -q mem-leaks' failed unexpectedly (exit code 1)
+  % cat .stderr
+</skipped>
+    </testcase>
+    <testcase classname="language" name="addr" time="0.42181396484375"/>
+    <testcase classname="language" name="any" time="0.4151480197906494"/>
+    <testcase classname="language" name="time" time="0.41026782989501953"/>
+</testsuite>
+

@@ -2,6 +2,11 @@
 ci_template: &CI_TEMPLATE
   only_if: $CIRRUS_BRANCH == 'master' || $CIRRUS_BRANCH =~ 'release/.*' || $CIRRUS_PR != ''
   test_script: ./ci/test1.sh
+  always:
+    btest_junit_artifacts:
+      path: "results.xml"
+      type: text/xml
+      format: junit
 
 linux_task:
   container:
