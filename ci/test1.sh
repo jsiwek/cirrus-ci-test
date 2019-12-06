@@ -7,4 +7,6 @@ nproc
 free -h
 df -h
 
+sysctl -a | grep machdep.cpu
+
 exit 0
