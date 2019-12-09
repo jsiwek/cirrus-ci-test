@@ -9,4 +9,6 @@ df -h
 
 sysctl -a | grep machdep.cpu
 
+which pip
+
 exit 0
