@@ -11,4 +11,6 @@ sysctl -a | grep machdep.cpu
 
 which pip
 
+echo on otherbranch
+
 exit 0
