@@ -1,18 +1,16 @@
 
 ci_template: &CI_TEMPLATE
-  only_if: >
-    $CIRRUS_PR != '' ||
-    $CIRRUS_BRANCH == 'master' ||
-    $CIRRUS_BRANCH =~ 'release/.*'
-
   test_script: ./ci/test1.sh
 
-# linux_task:
-#   container:
-#     dockerfile: ci/ubuntu-18.04/Dockerfile
-#   << : *CI_TEMPLATE
+  env:
+    SSH_KEY: ENCRYPTED[25a5e9bc4075f0a166b3eca30243c4cdb89a5f3b12937d3871c8e8058f40f440d88f06a1f0337325a2ac51c89c1a389f]
 
-osx_task:
-  osx_instance:
-    image: mojave-base
+linux_task:
+  container:
+    dockerfile: ci/ubuntu-18.04/Dockerfile
   << : *CI_TEMPLATE
+
+# osx_task:
+#   osx_instance:
+#     image: mojave-base
+#   << : *CI_TEMPLATE
