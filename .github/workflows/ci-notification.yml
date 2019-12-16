@@ -1,10 +1,10 @@
-name: CI Notifications
+name: CI Email Notification
 on: [check_suite]
 jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Send CI Notification Email
+      - name: Send CI Email Notification
         uses: docker://cirrusactions/email:latest
         env:
           APP_NAME: "Cirrus CI"
