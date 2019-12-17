@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send CI Email Notification
-        uses: docker://jsiwek/cirrus-actions-email:latest
+        uses: jsiwek/ci-email-action@master
         env:
           APP_NAME: "Cirrus CI"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
