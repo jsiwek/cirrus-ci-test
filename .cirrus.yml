@@ -1,5 +1,10 @@
 
 ci_template: &CI_TEMPLATE
+  only_if: >
+    $CIRRUS_PR != '' ||
+    $CIRRUS_BRANCH == 'master' ||
+    $CIRRUS_BRANCH =~ 'release/.*'
+
   test_script: ./ci/test.sh
 
 linux_task:
