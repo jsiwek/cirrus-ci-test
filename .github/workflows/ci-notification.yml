@@ -1,5 +1,7 @@
 name: CI Email Notification
-on: [check_suite]
+on:
+  check_suite:
+    types: [completed]
 jobs:
   notify:
     runs-on: ubuntu-latest
