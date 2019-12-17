@@ -1,6 +1,6 @@
 
 ci_template: &CI_TEMPLATE
-  test_script: ./ci/test1.sh
+  test_script: ./ci/test.sh
 
 linux_task:
   container:
