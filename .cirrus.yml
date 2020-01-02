@@ -1,7 +1,7 @@
 
 ci_template: &CI_TEMPLATE
   only_if: >
-    $CIRRUS_PR != '' ||
+    $CIRRUS_BRANCH =~ 'pull/.*' ||
     $CIRRUS_BRANCH == 'master' ||
     $CIRRUS_BRANCH =~ 'release/.*'
 
