@@ -2,6 +2,4 @@
 
 echo "hi"
 
-sleep 600
-
-exit 1
+exit 0
