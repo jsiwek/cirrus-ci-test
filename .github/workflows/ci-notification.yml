@@ -3,6 +3,12 @@ on:
   check_suite:
     types: [completed]
 jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Debug
+        uses: hmarr/debug-action@master
+
   notify:
     runs-on: ubuntu-latest
     steps:
