@@ -2,5 +2,6 @@
 
 echo "hi"
 
-exit 1
 
+
+exit 1
