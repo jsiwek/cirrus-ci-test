@@ -2,4 +2,6 @@
 
 echo "hi"
 
+sleep 600
+
 exit 0
