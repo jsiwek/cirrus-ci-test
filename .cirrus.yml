@@ -10,6 +10,7 @@ ci_template: &CI_TEMPLATE
 
 env:
   NUMBERS: ENCRYPTED[a424eafaebece32acb19401046ccaa2125bb7a5f59e724bf3fca9dd0f2f01ac6682e7bf57845b560b4be8e7b7106c083]
+  MORE_NUMBERS: ENCRYPTED[no]
 
 linux_task:
   container:
