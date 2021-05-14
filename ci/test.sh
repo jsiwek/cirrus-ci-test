@@ -1,6 +1,12 @@
 #! /usr/bin/env bash
 
 echo "hi"
-echo ${NUMBERS}
+
+if [[ ${NUMBERS} -eq 1234 ]]; then
+  echo "got expected numbers"
+else
+  echo "got unexpected numbers"
+fi
+
 
 exit 0
