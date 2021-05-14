@@ -8,6 +8,9 @@ ci_template: &CI_TEMPLATE
 
   test_script: ./ci/test.sh
 
+env:
+  NUMBERS: ENCRYPTED[a424eafaebece32acb19401046ccaa2125bb7a5f59e724bf3fca9dd0f2f01ac6682e7bf57845b560b4be8e7b7106c083]
+
 linux_task:
   container:
     dockerfile: ci/ubuntu-18.04/Dockerfile
