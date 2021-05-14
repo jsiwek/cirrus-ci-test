@@ -13,10 +13,10 @@ linux_task:
     dockerfile: ci/ubuntu-18.04/Dockerfile
   << : *CI_TEMPLATE
 
-other_linux_task:
-  container:
-    dockerfile: ci/ubuntu-18.04/Dockerfile
-  << : *CI_TEMPLATE
+# other_linux_task:
+#   container:
+#     dockerfile: ci/ubuntu-18.04/Dockerfile
+#   << : *CI_TEMPLATE
 
 # osx_task:
 #   osx_instance:
